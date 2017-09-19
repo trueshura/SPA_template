@@ -4,16 +4,19 @@ var $ = require('jquery');
 
 require('../less/style.less');
 
-var appView=require('./views/mainView');
+var appView=require('./views/appView');
+var MyRouter=require('./router.js');
 
 var myApp = Mn.Application.extend({
     onStart:    function(){
-        this.showView(new appView());
+        this.appView=new appView();
+        Bb.history.start({root: '/',pushState: true});
     }
 });
 
 $(function(){
-    app=new myApp(user);
+    var app=window.app=new myApp();
+    app.router=new MyRouter();
     app.start();
 });
 
