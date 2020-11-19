@@ -1,13 +1,12 @@
-var Mn = require('backbone.marionette');
-var Bb = require('backbone');
+const Mn = require('backbone.marionette');
 
-var controller=require('./routeController');
+const controller = require('./routeController');
 
 module.exports = Mn.AppRouter.extend({
     controller: controller,
     appRoutes: {
-        ''  :                   'main',
+        '': 'main'
     },
     onRoute: function(name, path, args) {
-    }  
+    }
 });

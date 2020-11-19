@@ -1,13 +1,13 @@
-var Mn = require('backbone.marionette');
+const Mn = require('backbone.marionette');
 
 //require('../vendor/modal.js');
 
-var handleHrefs=require('./behaviors/handleHrefs');
+const handleHrefs=require('./behaviors/handleHrefs');
 
 module.exports=Mn.View.extend({
     behaviors: {
-        handleHrefs: handleHrefs,        
-    },    
+        handleHrefs: handleHrefs,
+    },
     el:         '#appMain',
 
     ui:    {
@@ -27,14 +27,13 @@ module.exports=Mn.View.extend({
 //        this.showChildView('controls', this.controlView);
 //        this.showChildView('footer', {template: footer});
         this.$el.removeClass('unloaded');
-                
+
     },
     setMainView: function(view, needWrap){
-        needWrap = needWrap === undefined ? true : false;
-        var oldView = this.getChildView('main');
+        needWrap = needWrap === undefined;
+        const oldView = this.getChildView('main');
         if(oldView && oldView.isAttached()){
             this.detachChildView('main');
-            delete oldView;
         }
         this.showChildView('main', view);
         if(needWrap){
@@ -46,7 +45,7 @@ module.exports=Mn.View.extend({
         }
         $('html, body').animate({
             scrollTop: this.ui.$controls.offset().top},0);
-        
+
         if(this.loginDialog && this.loginDialog.isAttached()) this.loginDialog.destroy();
     },
 });

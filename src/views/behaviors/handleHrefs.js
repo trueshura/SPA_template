@@ -1,5 +1,4 @@
-var Mn = require('backbone.marionette');
-var Bb = require('backbone');
+const Mn = require('backbone.marionette');
 
 module.exports=Mn.Behavior.extend({
     events: {
@@ -7,11 +6,11 @@ module.exports=Mn.Behavior.extend({
     },
     handleClicks: function (e) {
         try{
-            var obj=e.currentTarget;
-            var url=obj.getAttribute('href');
+            const obj=e.currentTarget;
+            const url=obj.getAttribute('href');
             if( !e.ctrlKey && !e.shiftKey &&
-                obj.getAttribute('target') != "_blank" &&
-                url && url.substring(0,1) != "#" &&
+                obj.getAttribute('target') !== "_blank" &&
+                url && url.substring(0,1) !== "#" &&
                 !obj.classList.contains('external')){
 
                 e.preventDefault();

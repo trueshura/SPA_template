@@ -1,9 +1,6 @@
-var Mn = require('backbone.marionette');
-var Bb = require('backbone');
+const Mn = require('backbone.marionette');
 
-var config=require('../../../config');
-
-var loadingTemplate=require('./templates/loading.hbs');
+const loadingTemplate=require('./templates/loading.hbs');
 
 module.exports=Mn.Behavior.extend({
     loadingTemplate:   loadingTemplate,

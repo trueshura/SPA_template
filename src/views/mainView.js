@@ -1,7 +1,6 @@
-var Mn = require('backbone.marionette');
-var Bb = require('backbone');
+const Mn = require('backbone.marionette');
 
-var template=require('./templates/main.hbs');
+const template=require('./templates/main.hbs');
 
 module.exports=Mn.View.extend({
     template:   template,
